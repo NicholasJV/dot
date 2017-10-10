@@ -1,12 +1,11 @@
-export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\W\[\033[m\]\$ "
-
+# export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\W\[\033[m\]\$ "
 
 eval `keychain --eval --agents ssh --inherit any id_rsa`
 
 export PATH=~/opt/bin:/opt/local/bin:/opt/local/sbin:$PATH
 # Finished adapting your PATH environment variable for use with MacPorts.
 
-export MYVIMRC=$(/.vimrc)
+export MYVIMRC=$(~/.vimrc)
 
 # SYSTEM INFORMATION
 alias showPath='echo $PATH | tr ":" "\n"'
@@ -18,17 +17,15 @@ if [ -f ~/.bashrc ]; then
    source ~/.bashrc
 fi
 
+if [ -f ~/.bashrc ]; then
+   source ~/.bashrc
+fi
 
 
-##
-# Your previous /Users/nicholasvanvoorthuysen/.bash_profile file was backed up as /Users/nicholasvanvoorthuysen/.bash_profile.macports-saved_2015-01-19_at_13:55:17
-##
+# defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false         # For VS Code
+# defaults write com.microsoft.VSCodeInsiders ApplePressAndHoldEnabled -bool false # For VS Code Insider
 
-# MacPorts Installer addition on 2015-01-19_at_13:55:17: adding an appropriate PATH variable for use with MacPorts.
 
-# Finished adapting your PATH environment variable for use with MacPorts.
-
-### removed-rvm ### export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 # FOLDER and FILE NAVIGATION -- moved to .bashrc
 # alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES'
