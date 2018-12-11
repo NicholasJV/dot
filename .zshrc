@@ -1,52 +1,17 @@
+# NicholasJV's .zshrc from versioned .dotfiles
 
 
-alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES'
-alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO'
-# killAll Finder'
-
-alias restartFinder='killall Finder /System/Library/CoreServices/Finder.app'
-alias showPath='echo $PATH | tr ":" "\n"'
-alias ls='ls -F'
-alias cd..='cd ..'
-alias cd-='cd -'
-# alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
-
-# LOAD MONGO DB PROCESS
-alias mongos='bash ~/mongo.sh'
-alias mongoinit='bash ~/mongo.sh'
-alias startmongo='bash ~/mongo.sh'
-
-# Git aliases
-alias gitch='git checkout'
-alias gcommes='git commit -m'
-alias gcom='git commit -m'
-alias gst='git status'
-alias gstat='git status'
-alias gaddaa='git add -A'
-alias gada='git add .'
-alias gcho='git checkout'
-
-# text editor aliases
-alias subl.='sublime .'
-alias atm.='atom .'
-
-# disk usage info
-alias howbig='du -sh *'
-
-# node npm
-alias rmrf_node_modules='rm -rf node_modules'
-
-# Android dev sdk
-export GRADLE_OPTS="-Dorg.gradle.daemon=true"
-
-# mobile dev
-alias rnrios="react-native run-ios"
-
-#Set name of the theme to load.
+# Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 ZSH_THEME="robbyrussell"
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(git osx zsh-autosuggestions zsh-syntax-highlighting)
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -85,24 +50,17 @@ ZSH_THEME="robbyrussell"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
+export ZSH=$HOME/.oh-my-zsh
+source $ZSH/oh-my-zsh.sh
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
 
 # User configuration
 
-# put this back into path to to bring back RVM:
-# /Users/nick/.rvm/gems/ruby-1.9.3-p551/bin:/Users/nick/.rvm/gems/ruby-1.9.3-p551@global/bin:/Users/nick/.rvm/rubies/ruby-1.9.3-p551/bin:
-
-export PATH="/Users/nick/opt/bin:/usr/local/mysql/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/Users/nick/.rvm/bin"
+# export PATH="/Users/nick/opt/bin:/usr/local/mysql/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/Users/nick/.rvm/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
-export ZSH=$HOME/.oh-my-zsh
 
-source $ZSH/oh-my-zsh.sh
+export MYVIMRC="~/.dotfiles/.vimrc"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -129,7 +87,24 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export MYVIMRC="~/.vimrc"
+alias restartFinder='killall Finder /System/Library/CoreServices/Finder.app'
+alias ls='ls -FG'
+alias cd-='cd -'
+alias l='ls -lahGH'
+# alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
 
-export NVM_DIR="/Users/nick/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+# disk usage info
+alias howbig='du -sh *'
+
+# node npm
+alias rmrf_node_modules='rm -rf node_modules'
+
+# Android dev sdk
+export GRADLE_OPTS="-Dorg.gradle.daemon=true"
+
+# mobile dev
+alias rnrios="react-native run-ios"
+
+# This loads nvm
+# export NVM_DIR="/Users/nick/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  
