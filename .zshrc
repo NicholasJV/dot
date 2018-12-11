@@ -11,7 +11,12 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git osx zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(
+  git 
+  osx 
+  zsh-autosuggestions 
+  zsh-syntax-highlighting
+)
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -54,12 +59,12 @@ export ZSH=$HOME/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
 
-# User configuration
+# USER CONFIGURATION
 
 # export PATH="/Users/nick/opt/bin:/usr/local/mysql/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/Users/nick/.rvm/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
-
+source ~/.dotfiles/.bashrc
 export MYVIMRC="~/.dotfiles/.vimrc"
 
 # You may need to manually set your language environment
@@ -86,25 +91,21 @@ export MYVIMRC="~/.dotfiles/.vimrc"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-alias restartFinder='killall Finder /System/Library/CoreServices/Finder.app'
-alias ls='ls -FG'
-alias cd-='cd -'
-alias l='ls -lahGH'
-# alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
+alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
 
 # disk usage info
 alias howbig='du -sh *'
 
-# node npm
-alias rmrf_node_modules='rm -rf node_modules'
+# File navigation
+alias listPath='echo $PATH | tr ":" "\n"'
+alias showPath='echo $PATH | tr ":" "\n"'
+alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES'
+alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO'
+alias restartFinder='killall Finder /System/Library/CoreServices/Finder.app'
+alias l='ls -lahGH'
+alias ls='ls -hGF'
 
-# Android dev sdk
-export GRADLE_OPTS="-Dorg.gradle.daemon=true"
-
-# mobile dev
-alias rnrios="react-native run-ios"
-
-# This loads nvm
-# export NVM_DIR="/Users/nick/.nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  
+# COMMAND PROMPT COLOR SCHEME
+# parse_git_branch() { git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/' }
+# export PS1="@\u \[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
+export CLICOLOR=1
