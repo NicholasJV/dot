@@ -61,6 +61,9 @@ source $ZSH/oh-my-zsh.sh
 
 # USER CONFIGURATION
 
+# so homebrew works
+export PATH="/usr/local/bin:/usr/local/sbin:$PATH" 
+# just for reference:
 # export PATH="/Users/nick/opt/bin:/usr/local/mysql/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/Users/nick/.rvm/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 

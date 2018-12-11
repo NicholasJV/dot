@@ -26,6 +26,8 @@ export NVM_DIR="$HOME/.nvm"
 # load node version manager
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" 
 [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
+# specify node version used to avoid nvm/npm prefix madness
+nvm use node
 # go back to manually loading nvm:
 # alias load_nvm='[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" && [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"'
 
