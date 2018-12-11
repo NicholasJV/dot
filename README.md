@@ -9,10 +9,9 @@
 - You need two local directories `~/.zsh` and `~/.oh-my-zsh` (both of which should be there as part of default setup)
   - Plugins 
     - clone to `.oh-my-zsh/custom/plugins` 
-    - *EX:*
-  `git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions`
+    - *EX:*  
+  `git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions`  
 where `$ZSH_CUSTOM` is set to `$HOME/.oh-my-zsh/custom`
-    - add in `.zshrc` on the plugins line. 
-    - *EX:*
-`plugins(git osx zsh-autosuggestions)` 
-
+    - add the name of the plugin to the `plugins` function `.zshrc`
+    - *EX:*  
+`plugins=(git osx zsh-autosuggestions)` 
